@@ -1,56 +1,58 @@
-# RSS-Feed-Scraper für Arbeitsmarkt‑DEU
+# lm-info-agent
 
-Dieses Python‑Projekt stellt einen ersten Prototypen dar, um automatisch RSS‑Feeds von Stakeholdern im deutschen Arbeitsmarkt abzurufen und die neuesten Beiträge systematisch zu laden.
+A prototype Python project to periodically fetch, store, and process RSS feeds from key stakeholders in the German labor market. The system is organized into modular components for scraping, storage, orchestration, and content writing.
 
-## Projektstruktur
+## Project Structure
 
 ```
-rss_scraper/                      # Wurzelverzeichnis\│
-├── README.md                     # Projektbeschreibung & Setup
-├── requirements.txt              # Python-Abhängigkeiten
-├── feeds_list.csv                # Liste der RSS-Feed-URLs mit Metadaten
-├── src/                          # Quellcode
-│   ├── __init__.py
-│   ├── scraper.py                # Hauptskript zum Abruf und Speichern der Feeds
-│   ├── storage.py                # Module zur Persistenz (z.B. SQLite)
-│   └── utils.py                  # Hilfsfunktionen (Logging, Config)
-└── tests/                        # Unit-Tests für einzelne Module
+lm-info-agent/                      # Root directory
+├── README.md                        # Project overview & setup instructions
+├── LICENSE                          # Project license
+├── pyproject.toml                   # Python dependencies & build config
+├── feeds_list.csv                   # CSV of RSS feed URLs with metadata
+├── info_agent/                      # Source code modules
+│   ├── info_agent/                  # Central orchestrator
+│   │   ├── __init__.py
+│   │   ├── main.py                  # Entry point for scheduling workflows
+│   │   └── utils.py                 # Logging, configuration
+│   ├── scraper/                     # RSS feed fetching
+│   │   ├── __init__.py
+│   │   ├── main.py                  # Fetch and parse RSS feeds
+│   │   └── utils.py                 # HTTP client, retry logic, parser helpers
+│   ├── storage/                     # Persistence layer
+│   │   ├── __init__.py
+│   │   ├── main.py                  # Save and query entries (e.g., SQLite)
+│   │   └── utils.py                 # Schema definitions, migrations
+│   └── writer/                      # Report and summary generation
+│       ├── __init__.py
+│       ├── main.py                  # Generate summaries and export results
+│       └── utils.py                 # Template rendering, export helpers
+└── tests/                           # Unit tests for each component
+    ├── test_info_agent.py
     ├── test_scraper.py
-    └── test_storage.py
+    ├── test_storage.py
+    └── test_writer.py
 ```
 
-## Erste Schritte
+## Getting Started
 
-1. Klonen des Repositories und Wechsel ins Projektverzeichnis:
-
-   ```bash
-   git clone <repo-url> rss_scraper
-   cd rss_scraper
-   ```
-
-2. Installation der Abhängigkeiten:
+1. **Clone the repository**
 
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
+   git clone <repo-url> lm-info-agent
+   cd lm-info-agent
    ```
 
-3. Ausführen des Scrapers:
+2. **Set up the environment**
 
    ```bash
-   python -m src.scraper
+   flox activate
    ```
 
-## Nächste Meilensteine
+## Next Steps
 
-* Implementierung von `scraper.py`:
-
-  * Einlesen von `feeds_list.csv`
-  * Abrufen aller Feeds mit `feedparser`
-  * Filtern und Speichern nur neuer Einträge (z.B. anhand `id` und `published`)
-* Aufbau einer Speicherschicht in `storage.py` (z.B. SQLite)
-* Logging und Error-Handling in `utils.py`
-* Erste Unit-Tests im Verzeichnis `tests/`
-
-„Möchtest du eine Review‑Runde für *README.md* starten?“
+* Implement incremental fetching in `scraper` to skip already-seen entries.
+* Define database schema and migrations in `storage` module.
+* Add detailed logging and error handling across all subsystems.
+* Write unit tests for edge cases and failure scenarios.
+* Integrate scheduling (e.g., cron or APScheduler) in `info_agent/main.py`.

@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "lm-info-agent"
+version = "0.1.0"
+description = "A prototype Python project to periodically fetch, store, and process RSS feeds from key stakeholders in the German labor market. The system is organized into modular components for scraping, storage, orchestration, and content writing."
+authors = ["Henry Zehe <henryzehe@iscloud.com>"]
+readme = "README.md"
+packages = [
+    { include = "info_agent", from = "info_agent"  },
+    { include = "scraper", from = "info_agent" },
+    { include = "storage", from = "info_agent" },
+    { include = "writer", from = "info_agent" },
+]
+
+[tool.poetry.dependencies]
+python = "3.12.10"
+pandas = "^2.2.3"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+pytest = "^8.3.5"
+jupyter = "^1.1.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

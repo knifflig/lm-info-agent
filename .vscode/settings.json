@@ -1,0 +1,14 @@
+{
+    // Use zsh as the integrated shell (macOS)
+    "terminal.integrated.defaultProfile.osx": "zsh",
+
+    "python.defaultInterpreterPath": "${workspaceFolder}/.flox/cache/poetry/virtualenvs",
+    
+    // On terminal launch, run flox activate before dropping to prompt
+    "terminal.integrated.profiles.osx": {
+      "zsh": {
+        "path": "/bin/zsh",
+        "args": ["-l", "-c", "flox activate && exec zsh"]
+      }
+    }
+  }
