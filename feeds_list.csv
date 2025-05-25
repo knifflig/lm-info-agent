@@ -1,5 +1,5 @@
 ﻿prefix;branch;sub;code;name;description;rss_link
-GOV;GOV_FED;;GOV_FED_BMAS;Bundesministerium für Arbeit und Soziales (BMAS);Zentrale Instanz für Arbeitsmarkt- und Sozialpolitik, zuständig für Gesetzgebung zu Arbeit, Grundsicherung, Rente und Teilhabe.;https://www.bmas.de/DE/Service/Newsletter/RSS/rss-feed.html
+GOV;GOV_FED;;GOV_FED_BMAS;Bundesministerium für Arbeit und Soziales (BMAS);Zentrale Instanz für Arbeitsmarkt- und Sozialpolitik, zuständig für Gesetzgebung zu Arbeit, Grundsicherung, Rente und Teilhabe.;https://www.bmas.de/SiteGlobals/Functions/RSSFeed/DE/RSSNewsfeed/RSSNewsfeed.xml
 GOV;GOV_FED;;GOV_FED_BMWK;Bundesministerium für Wirtschaft und Klimaschutz (BMWK);Verantwortlich für wirtschaftspolitische Rahmensetzung, Fachkräftestrategie, Energiepolitik und Transformation.;https://www.bmwk.de/Redaktion/EN/Artikel/Service/rss-newsfeed.html
 GOV;GOV_FED;;GOV_FED_BMBF;Bundesministerium für Bildung und Forschung (BMBF);"Zuständig für Berufsbildung, Weiterbildung und Forschungsförderung; zentrale Quelle für Qualifikations- und Innovationspolitik.";https://www.bmbf.de/rss/aktuell.rss
 GOV;GOV_FED;;GOV_FED_BMF;Bundesministerium der Finanzen (BMF);Steuer- und Haushaltspolitik mit Einfluss auf Lohnsteuer, Sozialabgaben und arbeitsmarktbezogene Förderprogramme.;https://www.bundesfinanzministerium.de/Web/DE/Service/Abonnements/Rss/rss.html

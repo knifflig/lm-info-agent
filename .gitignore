@@ -176,5 +176,7 @@ cython_debug/
 
 
 
-
+__pycache__/*
 .DS_Store
+__dev__/*
+__news_db__/*
