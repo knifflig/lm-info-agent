@@ -2,7 +2,7 @@ import logging
 
 # configure root logger for scraper
 logger = logging.getLogger("scraper")
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.WARNING)
 handler = logging.StreamHandler()
 formatter = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s")
 handler.setFormatter(formatter)
