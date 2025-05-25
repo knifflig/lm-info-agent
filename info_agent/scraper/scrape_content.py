@@ -15,7 +15,7 @@ from newspaper import Article
 # ProxyCrawl RapidAPI configuration
 API_URL = "https://proxycrawl-crawling.p.rapidapi.com/"
 API_HOST = "proxycrawl-crawling.p.rapidapi.com"
-API_KEY = os.getenv("PROXYCRAWL_RAPIDAPI_KEY")  # set this in your environment
+API_KEY = os.getenv("PROXYCRAWL_RAPIDAPI_KEY")
 
 
 def scrape_content_raw(url: str, render: bool = False, timeout: int = 30) -> Optional[Dict[str, Any]]:

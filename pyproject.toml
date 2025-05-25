@@ -9,11 +9,13 @@ packages = [
     { include = "scraper", from = "info_agent" },
     { include = "storage", from = "info_agent" },
     { include = "writer", from = "info_agent" },
+    { include = "rss_discovery", from = "info_agent" },
 ]
 
 [tool.poetry.dependencies]
 python = "3.12.10"
 pandas = "^2.2.3"
+url-normalize = "^2.2.1"
 
 
 [tool.poetry.group.dev.dependencies]
